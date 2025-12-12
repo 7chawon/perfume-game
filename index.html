@@ -2321,6 +2321,7 @@
                 emotion: null,
                 responses: {}
             };
+            let textCounter = 1;
             
             // 페르소나 선택
             const personaInput = document.querySelector('input[name="persona"]:checked');
@@ -2330,9 +2331,20 @@
             const emotionInput = document.querySelector('input[name="emotion"]:checked');
             if(emotionInput) data.emotion = emotionInput.value;
             
-            // 모든 text/textarea input 수집
+            // 모든 text/textarea input 수집 (이름이 없을 때도 안전하게 수집)
             document.querySelectorAll('input[type="text"], textarea').forEach(input => {
-                const qid = input.getAttribute('data-question-id') || input.name || input.id;
+                let qid = input.getAttribute('data-question-id') || input.name || input.id;
+                if(!qid) {
+                    const labelEl = input.closest('.qbox')?.querySelector('.question');
+                    const labelText = labelEl ? labelEl.textContent.trim() : '';
+                    if(labelText) qid = labelText;
+                }
+                if(!qid && input.placeholder) {
+                    qid = `placeholder: ${input.placeholder.trim()}`;
+                }
+                if(!qid) {
+                    qid = `text_input_${textCounter++}`;
+                }
                 if(qid && input.value.trim()) {
                     data.responses[qid] = input.value.trim();
                 }
