@@ -1,0 +1,8 @@
+﻿
+    /* 섹션 제목 옆 진행도 텍스트(예: 1 of 25) 숨김 */
+    .section-index { display: none !important; }
+    /* 진행 게이지 크기 확대 */
+    .progress-wrap { gap: 12px; width: 100%; }
+    .progress-bar { height: 24px; border-radius: 12px; width: 100%; }
+    #progressFill { height: 100%; }
+    #progressText { font-size: 16px; font-weight: 700; color: #e0e0ff; }
