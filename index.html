@@ -2322,6 +2322,28 @@
                 responses: {}
             };
             let textCounter = 1;
+
+            // 입력과 가장 가까운 질문 텍스트 추출 유틸
+            const getLabelText = (input) => {
+                // 1) 같은 qbox 안의 question
+                const inQbox = input.closest('.qbox');
+                if (inQbox) {
+                    const q = inQbox.querySelector('.question');
+                    if (q && q.textContent.trim()) return q.textContent.trim();
+                }
+                // 2) 같은 섹션에서 바로 앞에 있는 question
+                const section = input.closest('.section');
+                if (section) {
+                    let prev = input.closest('.options') || input.parentElement;
+                    while (prev && prev.previousElementSibling) {
+                        prev = prev.previousElementSibling;
+                        if (prev.classList && prev.classList.contains('question') && prev.textContent.trim()) {
+                            return prev.textContent.trim();
+                        }
+                    }
+                }
+                return '';
+            };
             
             // 페르소나 선택
             const personaInput = document.querySelector('input[name="persona"]:checked');
@@ -2335,8 +2357,7 @@
             document.querySelectorAll('input[type="text"], textarea').forEach(input => {
                 let qid = input.getAttribute('data-question-id') || input.name || input.id;
                 if(!qid) {
-                    const labelEl = input.closest('.qbox')?.querySelector('.question');
-                    const labelText = labelEl ? labelEl.textContent.trim() : '';
+                    const labelText = getLabelText(input);
                     if(labelText) qid = labelText;
                 }
                 if(!qid && input.placeholder) {
