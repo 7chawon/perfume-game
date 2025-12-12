@@ -1892,6 +1892,15 @@
                     <button class="btn outline" data-prev="18">Prev</button>
                     <button class="btn primary" id="finalSubmitBtn">제출하기</button>
                 </div>
+                <!-- 추가 질문: 향수 이름 및 이유 -->
+                <div style="margin-top:20px; padding:16px; background:#1b1b2f; border:1px solid #333; border-radius:10px;">
+                    <div style="display:flex; flex-direction:column; gap:12px;">
+                        <label style="color:#e0e0ff; font-weight:700;">향수 이름을 정해주세요</label>
+                        <input type="text" name="perfume_name" id="perfume_name" data-question-id="perfume_name" placeholder="예: 미드나잇 블룸" style="padding:10px; border-radius:8px; border:1px solid #444; background:#0f0f1a; color:#fff;" />
+                        <label style="color:#e0e0ff; font-weight:700;">이유를 설명해주세요</label>
+                        <textarea name="perfume_reason" id="perfume_reason" data-question-id="perfume_reason" placeholder="해당 이름을 선택한 이유를 적어주세요" rows="4" style="padding:10px; border-radius:8px; border:1px solid #444; background:#0f0f1a; color:#fff;"></textarea>
+                    </div>
+                </div>
                 <div id="submitMessage" style="display:none; margin-top:20px; padding:16px; background:#4caf50; color:#fff; border-radius:10px; text-align:center; font-weight:700;">
                     제출이 완료되었습니다! 감사합니다. 🎉
                 </div>
