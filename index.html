@@ -2356,6 +2356,7 @@
             // 모든 text/textarea input 수집 (이름이 없을 때도 안전하게 수집)
             document.querySelectorAll('input[type="text"], textarea').forEach(input => {
                 let qid = input.getAttribute('data-question-id') || input.name || input.id;
+                const sectionTitle = input.closest('.section')?.querySelector('.section-title')?.textContent.trim();
                 if(!qid) {
                     const labelText = getLabelText(input);
                     if(labelText) qid = labelText;
@@ -2367,7 +2368,11 @@
                     qid = `text_input_${textCounter++}`;
                 }
                 if(qid && input.value.trim()) {
-                    data.responses[qid] = input.value.trim();
+                    let key = qid;
+                    if(data.responses[key] && sectionTitle) {
+                        key = `${key} (${sectionTitle})`;
+                    }
+                    data.responses[key] = input.value.trim();
                 }
             });
             
