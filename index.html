@@ -2287,9 +2287,12 @@
                 btn.disabled = true;
                 btn.textContent = '전송 중...';
                 
+                // HTML 형식으로 포맷팅
+                const formattedMessage = formatDataForEmail(formData);
+                
                 emailjs.send('service_czky8e5', 'template_kt5lxwf', {
                     name: '향 설문조사',
-                    message: JSON.stringify(formData, null, 2),
+                    message: formattedMessage,
                     email: 'shjo@sprdsc.com'
                 }).then(function(response) {
                     console.log('이메일 전송 성공:', response);
@@ -2349,6 +2352,72 @@
             data.responses.checkboxes = checkboxGroups;
             
             return data;
+        }
+        
+        // 데이터를 읽기 쉬운 HTML 형식으로 포맷팅
+        function formatDataForEmail(data) {
+            let html = '<div style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto;">';
+            html += '<h2 style="color: #6a5acd; border-bottom: 2px solid #6a5acd; padding-bottom: 10px;">향 설문조사 결과</h2>';
+            
+            // 제출 시간
+            const date = new Date(data.timestamp);
+            html += '<p style="color: #666; font-size: 14px;"><strong>제출 시간:</strong> ' + date.toLocaleString('ko-KR') + '</p>';
+            
+            // 선택된 페르소나
+            if (data.persona) {
+                html += '<div style="background: #f0f0ff; padding: 15px; margin: 15px 0; border-radius: 8px;">';
+                html += '<h3 style="color: #6a5acd; margin-top: 0;">선택한 직업군 (페르소나)</h3>';
+                html += '<p style="font-size: 16px; font-weight: bold;">' + data.persona + '</p>';
+                html += '</div>';
+            }
+            
+            // 선택된 감정
+            if (data.emotion) {
+                html += '<div style="background: #fff0f5; padding: 15px; margin: 15px 0; border-radius: 8px;">';
+                html += '<h3 style="color: #d946a6; margin-top: 0;">선택한 감정 카드</h3>';
+                html += '<p style="font-size: 16px; font-weight: bold;">' + data.emotion + '</p>';
+                html += '</div>';
+            }
+            
+            // 응답 내용
+            html += '<div style="background: white; padding: 20px; margin: 15px 0; border: 1px solid #ddd; border-radius: 8px;">';
+            html += '<h3 style="color: #333; margin-top: 0;">카드 뒷면 응답 내용</h3>';
+            
+            // 체크박스 그룹
+            if (data.responses.checkboxes && Object.keys(data.responses.checkboxes).length > 0) {
+                html += '<div style="margin-bottom: 20px;">';
+                html += '<h4 style="color: #555;">체크 항목</h4>';
+                for (const [name, values] of Object.entries(data.responses.checkboxes)) {
+                    html += '<div style="margin: 10px 0; padding: 10px; background: #f9f9f9; border-left: 3px solid #6a5acd;">';
+                    html += '<strong>' + name + ':</strong><br>';
+                    html += '<ul style="margin: 5px 0; padding-left: 20px;">';
+                    values.forEach(v => {
+                        html += '<li>' + v + '</li>';
+                    });
+                    html += '</ul>';
+                    html += '</div>';
+                }
+                html += '</div>';
+            }
+            
+            // 나머지 응답 (텍스트, 라디오)
+            const otherResponses = Object.entries(data.responses).filter(([key]) => key !== 'checkboxes');
+            if (otherResponses.length > 0) {
+                html += '<div>';
+                html += '<h4 style="color: #555;">기타 응답</h4>';
+                otherResponses.forEach(([key, value]) => {
+                    html += '<div style="margin: 10px 0; padding: 10px; background: #f9f9f9; border-left: 3px solid #d946a6;">';
+                    html += '<strong>' + key + ':</strong><br>';
+                    html += '<span style="white-space: pre-wrap;">' + value + '</span>';
+                    html += '</div>';
+                });
+                html += '</div>';
+            }
+            
+            html += '</div>'; // responses div 닫기
+            html += '</div>'; // main div 닫기
+            
+            return html;
         }
     });
 })();
