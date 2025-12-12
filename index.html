@@ -2288,10 +2288,9 @@
                 btn.textContent = '전송 중...';
                 
                 emailjs.send('service_czky8e5', 'template_kt5lxwf', {
-                    from_name: '향 설문조사',
-                    to_name: '관리자',
+                    name: '향 설문조사',
                     message: JSON.stringify(formData, null, 2),
-                    reply_to: 'shjo@sprdsc.com'
+                    email: 'shjo@sprdsc.com'
                 }).then(function(response) {
                     console.log('이메일 전송 성공:', response);
                     document.getElementById('submitMessage').style.display = 'block';
