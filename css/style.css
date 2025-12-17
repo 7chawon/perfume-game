@@ -1,3 +1,372 @@
+    /* 생활 리듬 카드만 검정 테두리, 둥근 모서리 */
+    .state-card-options .state-card-option .card-front {
+        background: transparent !important;
+        border: 2px solid #111 !important;
+        border-radius: 12px !important;
+        box-shadow: none !important;
+    }
+    .state-card-options .state-card-option .card-image {
+        border-radius: 12px !important;
+        border: none !important;
+    }
+    .state-card-options .state-card-option input[type="radio"]:checked + .card-front,
+    .state-card-options .state-card-option input[type="radio"]:checked ~ .card-front,
+    .state-card-options .state-card-option .card-front:hover {
+        border: 2px solid #111 !important;
+        box-shadow: none !important;
+    }
+    /* 생활 리듬 카드: 검정 테두리, 둥근 모서리, 배경 투명 */
+    .state-card-option .card-front {
+        background: transparent;
+        border: 2px solid #111 !important;
+        border-radius: 12px !important;
+        box-shadow: none !important;
+    }
+    .state-card-option .card-image {
+        border-radius: 12px;
+        border: none;
+    }
+    .state-card-option input[type="radio"]:checked + .card-front,
+    .state-card-option input[type="radio"]:checked ~ .card-front,
+    .state-card-option .card-front:hover {
+        border: 2px solid #111 !important;
+        box-shadow: none !important;
+    }
+    /* Quest 0 각 질문 박스 간격 */
+    .section-box {
+        margin-bottom: 40px;
+    }
+    /* Quest 0-2 상태 카드: 감정카드와 동일한 카드형 스타일 */
+    .state-card-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 18px;
+        margin: 24px 0 18px 0;
+    }
+    .state-card-option {
+        display: block;
+        cursor: pointer;
+    }
+    .state-card-option .card-front {
+        background: transparent;
+        border: 2px solid #111 !important;
+        border-radius: 12px !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 240px;
+    }
+    .state-card-option input[type="radio"] {
+        display: none;
+    }
+    .state-card-option .card-image {
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        object-fit: cover;
+        border-radius: 12px !important;
+        border: none !important;
+        margin: 0 !important;
+        background: transparent !important;
+        display: block;
+        /* Remove animation from image, only frame floats */
+    }
+    .state-card-option .card-title {
+        font-size: 1.18em;
+        font-weight: 700;
+        color: #222;
+        text-align: center;
+        margin: 18px 0 0 0;
+        letter-spacing: -0.5px;
+    }
+    .state-card-option input[type="radio"]:checked + .card-front,
+    .state-card-option input[type="radio"]:checked ~ .card-front {
+        border: 2px solid #111 !important;
+        box-shadow: none !important;
+        transform: scale(1.04);
+    }
+    .state-card-option .card-front:hover {
+        border: 2px solid #111 !important;
+        box-shadow: none !important;
+        transform: translateY(-4px) scale(1.03);
+    }
+    .state-card-option.state-card-etc .card-image {
+        background: #fff;
+        color: #bbb;
+        font-size: 1.6em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 180px;
+    }
+    .state-card-option.state-card-etc input[type="text"] {
+        margin: 12px auto 0 auto;
+        display: block;
+        border: 1.5px solid #a259e6;
+        border-radius: 8px;
+        padding: 6px 10px;
+        font-size: 1em;
+        width: 90%;
+        background: #fff;
+    }
+    /* Quest 0-2 상태 카드 선택 (작고 둥둥, pill, hover/active) */
+    .state-card-choices {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 18px;
+    }
+    .state-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 92px;
+        height: 110px;
+        background: #fff;
+        border: 2px solid #a259e6;
+        border-radius: 18px;
+        box-shadow: 0 4px 16px 0 rgba(162,89,230,0.08), 0 1.5px 8px 0 rgba(0,0,0,0.04);
+        cursor: pointer;
+        transition: transform 0.18s, box-shadow 0.18s, border 0.18s, background 0.18s;
+        margin-bottom: 6px;
+        position: relative;
+    }
+    .state-card:hover {
+        transform: translateY(-6px) scale(1.04) rotate(-2deg);
+        box-shadow: 0 8px 24px 0 rgba(162,89,230,0.16), 0 2px 12px 0 rgba(0,0,0,0.08);
+        border: 2.5px solid #7c2ae8;
+    }
+    .state-card input[type="radio"]:checked ~ .state-card-img,
+    .state-card input[type="radio"]:checked ~ .state-card-label {
+        background: #a259e6;
+        color: #fff;
+        border-radius: 12px;
+    }
+    .state-card input[type="radio"]:checked ~ .state-card-label {
+        font-weight: 700;
+    }
+    .state-card-img {
+        font-size: 2.1em;
+        margin-bottom: 8px;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background: #f7f0ff;
+        transition: background 0.18s, color 0.18s;
+    }
+    .state-card-label {
+        font-size: 1em;
+        color: #222;
+        text-align: center;
+        margin-bottom: 0;
+        padding: 2px 0 0 0;
+        background: none;
+        border-radius: 0;
+        transition: background 0.18s, color 0.18s;
+    }
+    .state-card-etc input[type="text"] {
+        margin-top: 8px;
+        width: 70px;
+        border: 1.5px solid #a259e6;
+        border-radius: 8px;
+        padding: 4px 8px;
+        font-size: 0.98em;
+        background: #fff;
+    }
+    /* Quest 0 선택지(키워드 pill) 스타일 */
+    .textbox-choice {
+        display: inline-flex;
+        align-items: center;
+        border: 2px solid #a259e6;
+        border-radius: 24px;
+        background: #fff;
+        color: #222;
+        font-size: 1.08em;
+        padding: 8px 22px;
+        margin: 0 8px 12px 0;
+        cursor: pointer;
+        transition: border 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
+        box-shadow: none;
+        font-weight: 500;
+        position: relative;
+    }
+    .textbox-choice input[type="radio"] {
+        display: none;
+    }
+    .textbox-choice input[type="radio"]:checked + span,
+    .textbox-choice input[type="radio"]:checked ~ span {
+        background: #a259e6;
+        color: #fff;
+        border-radius: 18px;
+        font-weight: 700;
+    }
+    .textbox-choice:hover {
+        border: 2px solid #7c2ae8;
+        background: #f7f0ff;
+    }
+    .textbox-choice input[type="text"] {
+        margin-left: 10px;
+        border: 1.5px solid #a259e6;
+        border-radius: 8px;
+        padding: 4px 10px;
+        font-size: 1em;
+        background: #fff;
+    }
+    /* Quest 0 텍스트 박스 선택 스타일 */
+    .textbox-choice {
+        display: flex;
+        align-items: center;
+        border: 2px solid #222;
+        border-radius: 8px;
+        background: #fff;
+        color: #111;
+        font-size: 1.08em;
+        padding: 12px 18px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: border 0.2s, box-shadow 0.2s;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .textbox-choice input[type="radio"]:checked + span {
+        font-weight: bold;
+        color: #fff;
+    }
+    .textbox-choice input[type="radio"]:checked ~ span,
+    .textbox-choice input[type="radio"]:checked ~ input[type="text"] {
+        color: #fff;
+    }
+    .textbox-choice input[type="radio"]:checked ~ span,
+    .textbox-choice input[type="radio"]:checked ~ input[type="text"],
+    .textbox-choice input[type="radio"]:checked + span {
+        background: #111;
+        border-radius: 6px;
+        padding: 4px 10px;
+    }
+    .textbox-choice:hover {
+        border: 2px solid #111;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .textbox-choice input[type="text"] {
+        margin-left: 10px;
+        border: 1px solid #bbb;
+        border-radius: 4px;
+        padding: 4px 8px;
+        font-size: 1em;
+    }
+    border-radius: 0 !important;
+/* Only for '향 분위기는 어떤 분위기 인가요?' mood cards: smaller, centered image */
+section .card-options.mood-cards .mood-card .card-image {
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    transform: none !important;
+    background: transparent !important;
+    z-index: 1 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+/* Only mood card images: smaller, fully visible, centered */
+.mood-card .card-image {
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    transform: none !important;
+    background: transparent !important;
+    z-index: 1 !important;
+}
+/* Mood card: fit image, white text with border for readability */
+/* Mood card: fix image cropping, text color, border, and overflow */
+.mood-card {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+        overflow: hidden;
+    z-index: 1;
+}
+.mood-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+.mood-card .mood-label {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 12px 8px 18px 8px;
+    text-shadow: 0 2px 8px #000, 0 0 2px #000, 0 0 1px #000;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-text-stroke: 1.5px #111;
+    text-stroke: 1.5px #111;
+    /* fallback for browsers that don't support text-stroke */
+    filter: drop-shadow(0 0 2px #000) drop-shadow(0 0 1px #000);
+}
+
+/* Mood card text for all job groups (card-title, card-description inside mood-card) */
+.mood-card .card-title, .mood-card .card-description {
+    color: #111 !important;
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px #fff;
+        text-shadow: 0 0 8px #fff, 0 0 16px #fff, 0 0 24px #fff, 0 0 32px #fff;
+        background: none;
+        border-radius: 0;
+        padding: 0;
+    position: relative;
+    z-index: 2;
+        font-weight: 700;
+        -webkit-text-stroke: 0;
+        text-stroke: 0;
+        box-shadow: none;
+}
+
+/* Ensure hover state does not clip content */
+.mood-card:hover, .mood-card:focus, .mood-card:active {
+    overflow: visible !important;
+    z-index: 2;
+}
+/* Add equal vertical spacing for each option row in grid */
+.option {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 /* Align radio/checkbox and text in one line for survey options */
 .option {
     display: flex;
@@ -326,14 +695,19 @@
             position: relative;
             width: 180px;
             height: 260px;
-            cursor: pointer;
+                object-fit: cover;
             transform-style: flat;
             transition: none;
             animation: float 3s ease-in-out infinite;
-            background: #fff;
-            border: 2px solid #111;
-            border-radius: 6px;
-            box-shadow: none;
+            background: transparent !important;
+            border: 2px solid #111 !important;
+            border-radius: 12px !important;
+            box-shadow: none !important;
+            animation: float 3s ease-in-out infinite;
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(var(--card-rotation, 0deg)); }
+            50% { transform: translateY(-15px) rotate(var(--card-rotation, 0deg)); }
+        }
         }
         
         .card-option:nth-child(1) { animation-delay: 0s; transform: rotate(-12deg) translateY(0); }
@@ -364,9 +738,9 @@
 
         /* Mood card tweaks */
         .mood-cards { flex-wrap: wrap; gap: 12px; padding: 10px 6px; }
-        .mood-cards .card-option { width: 170px; height: 240px; animation: none; transform: none; }
-        .mood-cards .card-option:hover { transform: translateY(-12px) scale(1.05) !important; }
-        .mood-card { color: #111; text-align: center; position: relative; overflow: hidden; background: #fff; background-size: cover; background-position: center; }
+        .mood-cards .card-option { width: 170px; height: 240px; }
+        .mood-cards .card-option:hover { transform: translateY(-12px) scale(1.05) !important; z-index: 10; }
+        .mood-card { color: #111; text-align: center; position: relative; overflow: visible !important; background: #fff; background-size: cover; background-position: center; }
         .mood-cards:not(.no-image) .mood-card::before { display: none !important; }
         .mood-cards:not(.no-image) .mood-card > * { position: relative; z-index: 2; }
         .mood-cards.no-image .mood-calm,
@@ -383,8 +757,8 @@
         .mood-cards:not(.no-image) .mood-hopeful { background-image: url('../img/낙관적이고 희망적인 분위기.png'); }
         .mood-cards:not(.no-image) .mood-dark { background-image: url('../img/우울하고 어두운 분위기.png'); }
         .mood-cards:not(.no-image) .mood-cute { background-image: url('../img/사랑스럽고 귀여운 분위기.png'); }
-        .mood-cards .card-description { opacity: 0; max-height: 0; overflow: hidden; transition: opacity 0.3s ease, max-height 0.3s ease; margin-top: 8px; font-size: 13px; line-height: 1.4; }
-        .mood-cards .card-option:hover .card-description { opacity: 1; max-height: 150px; }
+        .mood-cards .card-description { opacity: 0; max-height: 0; overflow: visible; transition: opacity 0.3s ease, max-height 0.3s ease; margin-top: 8px; font-size: 13px; line-height: 1.4; }
+        .mood-cards .card-option:hover .card-description { opacity: 1; max-height: 150px; overflow: visible; }
         
         /* 타로카드 뒤집기 애니메이션 */
         .tarot-card {
@@ -432,15 +806,15 @@
         .card-front {
             width: 100%;
             height: 100%;
-            background: #fff;
-            border: 3px solid #111;
-            border-radius: 6px;
-            padding: 20px;
+            background: transparent !important;
+            border: 2px solid #111 !important;
+            border-radius: 12px !important;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            box-shadow: none;
+            box-shadow: none !important;
             position: relative;
             overflow: hidden;
         }
@@ -462,8 +836,8 @@
         }
 
         .card-option:hover .card-front {
-            border-color: #111;
-            box-shadow: none;
+            border: none !important;
+            box-shadow: none !important;
         }
         
         .card-icon {
@@ -478,16 +852,16 @@
         }
         
         .card-title {
-            color: #111;
+            color: #111 !important;
             font-size: 16px;
             font-weight: 700;
             text-align: center;
             margin-bottom: 10px;
-            text-shadow: none;
+            text-shadow: 0 0 8px #fff, 0 0 16px #fff, 0 0 24px #fff, 0 0 32px #fff !important;
         }
         
         .card-description {
-            color: #111;
+            color: #111 !important;
             font-size: 12px;
             text-align: center;
             line-height: 1.5;
@@ -495,6 +869,7 @@
             max-height: 0;
             transition: none;
             overflow: hidden;
+            text-shadow: 0 0 8px #fff, 0 0 16px #fff, 0 0 24px #fff, 0 0 32px #fff !important;
         }
         
         .card-option:hover .card-description {
@@ -533,15 +908,25 @@
         }
         
         .card-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 12px;
-            opacity: 0.9;
-            z-index: 1;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            border-radius: 12px !important;
+            opacity: 1 !important;
+            z-index: 1 !important;
+            max-width: 100% !important;
+            max-height: 100% !important;
+            box-sizing: border-box !important;
+            pointer-events: none !important;
+        }
+        .card-front, .mood-card {
+            overflow: hidden !important;
+            position: relative !important;
+            width: 100% !important;
+            height: 100% !important;
         }
         
         .card-front .card-icon,
@@ -629,10 +1014,10 @@
         
         .image-block { 
             margin-top: 15px;
-            padding: 15px;
-            background: #fff;
-            border: 1px solid #111;
-            border-radius: 6px;
+            padding: 0;
+            background: none !important;
+            border: none !important;
+            border-radius: 0 !important;
         }
         
         .image-actions { 
