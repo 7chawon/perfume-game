@@ -102,6 +102,26 @@
     });
 
     document.addEventListener('DOMContentLoaded', function(){
+                // Quest 0-2 상태 카드형 선택지: 카드 전체 클릭 시 선택, 기타 입력란 클릭 시 해당 카드 선택
+                document.querySelectorAll('.state-card-choices').forEach(function(group){
+                    group.addEventListener('click', function(e){
+                        const label = e.target.closest('.state-card');
+                        if(label && group.contains(label)) {
+                            const radio = label.querySelector('input[type="radio"]');
+                            if(radio) {
+                                radio.checked = true;
+                                // 기타 입력란이 있으면 포커스
+                                const etcInput = label.querySelector('input[type="text"]');
+                                if(e.target === etcInput) {
+                                    radio.checked = true;
+                                    etcInput.focus();
+                                }
+                                // 선택 효과를 위해 강제 change 이벤트 발생
+                                radio.dispatchEvent(new Event('change', {bubbles:true}));
+                            }
+                        }
+                    });
+                });
         // 네비게이션(섹션 이동 버튼) 제거: 게이지만 보이게 하기
         try {
             const nav = document.getElementById('sectionNav');
@@ -207,3 +227,4 @@
         updateProgressVisibleOnly();
     });
 })();
+
