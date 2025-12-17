@@ -38,7 +38,66 @@
                     <img class="image-preview" src="img/start.png" alt="Perfume Quest Start" style="display:block;">
                 </div>
                 <div class="footer-actions">
-                    <button class="btn primary" data-next="2" id="startButton">START</button>
+                    <button class="btn primary" data-next="1-5" id="startButton">START</button>
+                </div>
+            </section>
+
+            <!-- Section 1.5: Quest 0 — 이야기의 주인공 (프린세스 메이커 스타일) -->
+            <section class="section" data-id="1-5">
+                <div class="section-box">
+                    <div class="question">Q0-1. 이 이야기 속에서 불리고 싶은 이름은?</div>
+                    <input type="text" name="hero_name" placeholder="이름 또는 닉네임을 입력하세요">
+                </div>
+                <div class="section-box">
+                    <div class="question">Q0-2. 이 인물에게 가장 자연스러운 ‘생활 리듬’은?</div>
+                    <div class="card-options state-card-options" data-question-id="hero_state">
+                        <label class="card-option state-card-option" data-card-id="state-day">
+                            <input type="radio" name="hero_state" value="낮 중심">
+                            <div class="card-front">
+                                <img class="card-image" src="img/morning.png" alt="낮 중심">
+                                <div class="card-title">낮 중심</div>
+                            </div>
+                        </label>
+                        <label class="card-option state-card-option" data-card-id="state-night">
+                            <input type="radio" name="hero_state" value="밤 중심">
+                            <div class="card-front">
+                                <img class="card-image" src="img/night.png" alt="밤 중심">
+                                <div class="card-title">밤 중심</div>
+                            </div>
+                        </label>
+                        <label class="card-option state-card-option" data-card-id="state-irregular">
+                            <input type="radio" name="hero_state" value="일정하지 않음">
+                            <div class="card-front">
+                                <img class="card-image" src="img/noting.png" alt="일정하지 않음">
+                                <div class="card-title">일정하지 않음</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="section-box">
+                    <div class="question">Q0-3. 이 이야기는 현실에 가까운가요, 상상에 가까운가요?</div>
+                    <div class="retro-choices">
+                        <label class="retro-choice textbox-choice">
+                            <input type="radio" name="hero_reality" value="현실의 나" hidden>
+                            <span>현실의 나</span>
+                        </label>
+                        <label class="retro-choice textbox-choice">
+                            <input type="radio" name="hero_reality" value="조금 꾸며진 나" hidden>
+                            <span>조금 꾸며진 나</span>
+                        </label>
+                        <label class="retro-choice textbox-choice">
+                            <input type="radio" name="hero_reality" value="완전히 다른 인물" hidden>
+                            <span>완전히 다른 인물</span>
+                        </label>
+                        <label class="retro-choice textbox-choice">
+                            <input type="radio" name="hero_reality" value="기타" hidden>
+                            <span>기타</span>
+                            <input type="text" name="hero_reality_etc" placeholder="직접 입력">
+                        </label>
+                    </div>
+                </div>
+                <div class="footer-actions">
+                    <button class="btn primary" data-next="2">Next</button>
                 </div>
             </section>
 
@@ -268,7 +327,7 @@
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_story" value="woody_base"></div>
                     </div>
                     <div class="option" style="display:grid;grid-template-columns:1fr 80px 80px 80px;gap:10px;align-items:center;">
-                        <div>🍋🟩시트러스</div>
+                        <div>🍋시트러스</div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_story" value="citrus_top"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_story" value="citrus_middle"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_story" value="citrus_base"></div>
@@ -335,6 +394,9 @@
                     <label class="card-option">
                         <input type="radio" name="mood_story" value="calm">
                         <div class="card-front mood-card mood-calm">
+                                <img class="card-image" src="img/green-man.png" alt="차분하고 여유로운 분위기">
+                            <img class="card-image" src="img/green-man.png" alt="차분하고 여유로운 분위기" />
+                            <img class="card-image" src="img/green-man.png" alt="차분하고 여유로운 분위기" />
                             <div class="card-icon">🧘‍♀️</div>
                             <div class="card-title">차분하고 여유로운 분위기</div>
                             <div class="card-description">잔잔한 파스텔 톤의 포근함</div>
@@ -343,6 +405,9 @@
                     <label class="card-option">
                         <input type="radio" name="mood_story" value="cynical">
                         <div class="card-front mood-card mood-cynical">
+                                <img class="card-image" src="img/red-woman.png" alt="시니컬하고 통통 튀는 분위기">
+                            <img class="card-image" src="img/red-woman.png" alt="시니컬하고 통통 튀는 분위기" />
+                            <img class="card-image" src="img/red-woman.png" alt="시니컬하고 통통 튀는 분위기" />
                             <div class="card-icon">😏</div>
                             <div class="card-title">시니컬하고 통통 튀는 분위기</div>
                             <div class="card-description">재치 있고 도발적인 무드</div>
@@ -351,6 +416,9 @@
                     <label class="card-option">
                         <input type="radio" name="mood_story" value="intense">
                         <div class="card-front mood-card mood-intense">
+                                <img class="card-image" src="img/blue-bubbles.png" alt="강렬하고 정열적인 분위기">
+                            <img class="card-image" src="img/blue-bubbles.png" alt="강렬하고 정열적인 분위기" />
+                            <img class="card-image" src="img/blue-bubbles.png" alt="강렬하고 정열적인 분위기" />
                             <div class="card-icon">🔥</div>
                             <div class="card-title">강렬하고 정열적인 분위기</div>
                             <div class="card-description">뜨거운 에너지와 드라마틱함</div>
@@ -359,6 +427,9 @@
                     <label class="card-option">
                         <input type="radio" name="mood_story" value="hopeful">
                         <div class="card-front mood-card mood-hopeful">
+                                <img class="card-image" src="img/sunflower.png" alt="낙관적이고 희망적인 분위기">
+                            <img class="card-image" src="img/sunflower.png" alt="낙관적이고 희망적인 분위기" />
+                            <img class="card-image" src="img/sunflower.png" alt="낙관적이고 희망적인 분위기" />
                             <div class="card-icon">🌅</div>
                             <div class="card-title">낙관적이고 희망적인 분위기</div>
                             <div class="card-description">부드러운 여명처럼 펼쳐지는 기대감</div>
@@ -367,6 +438,9 @@
                     <label class="card-option">
                         <input type="radio" name="mood_story" value="dark">
                         <div class="card-front mood-card mood-dark">
+                                <img class="card-image" src="img/blue-bubbles.png" alt="우울하고 어두운 분위기">
+                            <img class="card-image" src="img/dark-moon.png" alt="우울하고 어두운 분위기" />
+                            <img class="card-image" src="img/dark-moon.png" alt="우울하고 어두운 분위기" />
                             <div class="card-icon">🌑</div>
                             <div class="card-title">우울하고 어두운 분위기</div>
                             <div class="card-description">깊고 잔잔한 울림의 음영</div>
@@ -375,6 +449,9 @@
                     <label class="card-option">
                         <input type="radio" name="mood_story" value="cute">
                         <div class="card-front mood-card mood-cute">
+                                <img class="card-image" src="img/pink-woman.png" alt="사랑스럽고 귀여운 분위기">
+                            <img class="card-image" src="img/pink-woman.png" alt="사랑스럽고 귀여운 분위기" />
+                            <img class="card-image" src="img/pink-woman.png" alt="사랑스럽고 귀여운 분위기" />
                             <div class="card-icon">💕</div>
                             <div class="card-title">사랑스럽고 귀여운 분위기</div>
                             <div class="card-description">달콤하고 포근한 무드</div>
@@ -519,7 +596,7 @@
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_performer" value="woody_base"></div>
                     </div>
                     <div class="option" style="display:grid;grid-template-columns:1fr 80px 80px 80px;gap:10px;align-items:center;">
-                        <div>🍋🟩시트러스</div>
+                        <div>🍋시트러스</div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_performer" value="citrus_top"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_performer" value="citrus_middle"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_performer" value="citrus_base"></div>
@@ -586,6 +663,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_performer" value="calm">
                         <div class="card-front mood-card mood-calm">
+                            <img class="card-image" src="img/green-man.png" alt="차분하고 여유로운 분위기" />
                             <div class="card-icon">🧘‍♀️</div>
                             <div class="card-title">차분하고 여유로운 분위기</div>
                             <div class="card-description">잔잔한 파스텔 톤의 포근함</div>
@@ -594,6 +672,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_performer" value="cynical">
                         <div class="card-front mood-card mood-cynical">
+                            <img class="card-image" src="img/red-woman.png" alt="시니컬하고 통통 튀는 분위기" />
                             <div class="card-icon">😏</div>
                             <div class="card-title">시니컬하고 통통 튀는 분위기</div>
                             <div class="card-description">재치 있고 도발적인 무드</div>
@@ -602,6 +681,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_performer" value="intense">
                         <div class="card-front mood-card mood-intense">
+                            <img class="card-image" src="img/blue-bubbles.png" alt="강렬하고 정열적인 분위기" />
                             <div class="card-icon">🔥</div>
                             <div class="card-title">강렬하고 정열적인 분위기</div>
                             <div class="card-description">뜨거운 에너지와 드라마틱함</div>
@@ -610,6 +690,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_performer" value="hopeful">
                         <div class="card-front mood-card mood-hopeful">
+                            <img class="card-image" src="img/sunflower.png" alt="낙관적이고 희망적인 분위기" />
                             <div class="card-icon">🌅</div>
                             <div class="card-title">낙관적이고 희망적인 분위기</div>
                             <div class="card-description">부드러운 여명처럼 펼쳐지는 기대감</div>
@@ -618,6 +699,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_performer" value="dark">
                         <div class="card-front mood-card mood-dark">
+                            <img class="card-image" src="img/dark-moon.png" alt="우울하고 어두운 분위기" />
                             <div class="card-icon">🌑</div>
                             <div class="card-title">우울하고 어두운 분위기</div>
                             <div class="card-description">깊고 잔잔한 울림의 음영</div>
@@ -626,6 +708,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_performer" value="cute">
                         <div class="card-front mood-card mood-cute">
+                            <img class="card-image" src="img/pink-woman.png" alt="사랑스럽고 귀여운 분위기" />
                             <div class="card-icon">💕</div>
                             <div class="card-title">사랑스럽고 귀여운 분위기</div>
                             <div class="card-description">달콤하고 포근한 무드</div>
@@ -661,7 +744,7 @@
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_artist" value="woody_base"></div>
                     </div>
                     <div class="option" style="display:grid;grid-template-columns:1fr 80px 80px 80px;gap:10px;align-items:center;">
-                        <div>🍋🟩시트러스</div>
+                        <div>🍋시트러스</div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_artist" value="citrus_top"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_artist" value="citrus_middle"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_artist" value="citrus_base"></div>
@@ -728,6 +811,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_artist" value="calm">
                         <div class="card-front mood-card mood-calm">
+                            <img class="card-image" src="img/green-man.png" alt="차분하고 여유로운 분위기" />
                             <div class="card-icon">🧘‍♀️</div>
                             <div class="card-title">차분하고 여유로운 분위기</div>
                             <div class="card-description">잔잔한 파스텔 톤의 포근함</div>
@@ -736,6 +820,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_artist" value="cynical">
                         <div class="card-front mood-card mood-cynical">
+                            <img class="card-image" src="img/red-woman.png" alt="시니컬하고 통통 튀는 분위기" />
                             <div class="card-icon">😏</div>
                             <div class="card-title">시니컬하고 통통 튀는 분위기</div>
                             <div class="card-description">재치 있고 도발적인 무드</div>
@@ -744,6 +829,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_artist" value="intense">
                         <div class="card-front mood-card mood-intense">
+                            <img class="card-image" src="img/blue-bubbles.png" alt="강렬하고 정열적인 분위기" />
                             <div class="card-icon">🔥</div>
                             <div class="card-title">강렬하고 정열적인 분위기</div>
                             <div class="card-description">뜨거운 에너지와 드라마틱함</div>
@@ -752,6 +838,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_artist" value="hopeful">
                         <div class="card-front mood-card mood-hopeful">
+                            <img class="card-image" src="img/sunflower.png" alt="낙관적이고 희망적인 분위기" />
                             <div class="card-icon">🌅</div>
                             <div class="card-title">낙관적이고 희망적인 분위기</div>
                             <div class="card-description">부드러운 여명처럼 펼쳐지는 기대감</div>
@@ -760,6 +847,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_artist" value="dark">
                         <div class="card-front mood-card mood-dark">
+                            <img class="card-image" src="img/dark-moon.png" alt="우울하고 어두운 분위기" />
                             <div class="card-icon">🌑</div>
                             <div class="card-title">우울하고 어두운 분위기</div>
                             <div class="card-description">깊고 잔잔한 울림의 음영</div>
@@ -768,6 +856,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_artist" value="cute">
                         <div class="card-front mood-card mood-cute">
+                            <img class="card-image" src="img/pink-woman.png" alt="사랑스럽고 귀여운 분위기" />
                             <div class="card-icon">💕</div>
                             <div class="card-title">사랑스럽고 귀여운 분위기</div>
                             <div class="card-description">달콤하고 포근한 무드</div>
@@ -803,7 +892,7 @@
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_healer" value="woody_base"></div>
                     </div>
                     <div class="option" style="display:grid;grid-template-columns:1fr 80px 80px 80px;gap:10px;align-items:center;">
-                        <div>🍋🟩시트러스</div>
+                        <div>🍋시트러스</div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_healer" value="citrus_top"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_healer" value="citrus_middle"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_healer" value="citrus_base"></div>
@@ -870,6 +959,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_healer" value="calm">
                         <div class="card-front mood-card mood-calm">
+                            <img class="card-image" src="img/green-man.png" alt="차분하고 여유로운 분위기" />
                             <div class="card-icon">🧘‍♀️</div>
                             <div class="card-title">차분하고 여유로운 분위기</div>
                             <div class="card-description">잔잔한 파스텔 톤의 포근함</div>
@@ -878,6 +968,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_healer" value="cynical">
                         <div class="card-front mood-card mood-cynical">
+                            <img class="card-image" src="img/red-woman.png" alt="시니컬하고 통통 튀는 분위기" />
                             <div class="card-icon">😏</div>
                             <div class="card-title">시니컬하고 통통 튀는 분위기</div>
                             <div class="card-description">재치 있고 도발적인 무드</div>
@@ -886,6 +977,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_healer" value="intense">
                         <div class="card-front mood-card mood-intense">
+                            <img class="card-image" src="img/blue-bubbles.png" alt="강렬하고 정열적인 분위기" />
                             <div class="card-icon">🔥</div>
                             <div class="card-title">강렬하고 정열적인 분위기</div>
                             <div class="card-description">뜨거운 에너지와 드라마틱함</div>
@@ -894,6 +986,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_healer" value="hopeful">
                         <div class="card-front mood-card mood-hopeful">
+                            <img class="card-image" src="img/sunflower.png" alt="낙관적이고 희망적인 분위기" />
                             <div class="card-icon">🌅</div>
                             <div class="card-title">낙관적이고 희망적인 분위기</div>
                             <div class="card-description">부드러운 여명처럼 펼쳐지는 기대감</div>
@@ -902,6 +995,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_healer" value="dark">
                         <div class="card-front mood-card mood-dark">
+                            <img class="card-image" src="img/dark-moon.png" alt="우울하고 어두운 분위기" />
                             <div class="card-icon">🌑</div>
                             <div class="card-title">우울하고 어두운 분위기</div>
                             <div class="card-description">깊고 잔잔한 울림의 음영</div>
@@ -910,6 +1004,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_healer" value="cute">
                         <div class="card-front mood-card mood-cute">
+                            <img class="card-image" src="img/pink-woman.png" alt="사랑스럽고 귀여운 분위기" />
                             <div class="card-icon">💕</div>
                             <div class="card-title">사랑스럽고 귀여운 분위기</div>
                             <div class="card-description">달콤하고 포근한 무드</div>
@@ -945,7 +1040,7 @@
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_leader" value="woody_base"></div>
                     </div>
                     <div class="option" style="display:grid;grid-template-columns:1fr 80px 80px 80px;gap:10px;align-items:center;">
-                        <div>🍋🟩시트러스</div>
+                        <div>🍋시트러스</div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_leader" value="citrus_top"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_leader" value="citrus_middle"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_leader" value="citrus_base"></div>
@@ -1012,6 +1107,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_leader" value="calm">
                         <div class="card-front mood-card mood-calm">
+                            <img class="card-image" src="img/green-man.png" alt="차분하고 여유로운 분위기" />
                             <div class="card-icon">🧘‍♀️</div>
                             <div class="card-title">차분하고 여유로운 분위기</div>
                             <div class="card-description">잔잔한 파스텔 톤의 포근함</div>
@@ -1020,6 +1116,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_leader" value="cynical">
                         <div class="card-front mood-card mood-cynical">
+                            <img class="card-image" src="img/red-woman.png" alt="시니컬하고 통통 튀는 분위기" />
                             <div class="card-icon">😏</div>
                             <div class="card-title">시니컬하고 통통 튀는 분위기</div>
                             <div class="card-description">재치 있고 도발적인 무드</div>
@@ -1028,6 +1125,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_leader" value="intense">
                         <div class="card-front mood-card mood-intense">
+                            <img class="card-image" src="img/blue-bubbles.png" alt="강렬하고 정열적인 분위기" />
                             <div class="card-icon">🔥</div>
                             <div class="card-title">강렬하고 정열적인 분위기</div>
                             <div class="card-description">뜨거운 에너지와 드라마틱함</div>
@@ -1036,6 +1134,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_leader" value="hopeful">
                         <div class="card-front mood-card mood-hopeful">
+                            <img class="card-image" src="img/sunflower.png" alt="낙관적이고 희망적인 분위기" />
                             <div class="card-icon">🌅</div>
                             <div class="card-title">낙관적이고 희망적인 분위기</div>
                             <div class="card-description">부드러운 여명처럼 펼쳐지는 기대감</div>
@@ -1044,6 +1143,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_leader" value="dark">
                         <div class="card-front mood-card mood-dark">
+                            <img class="card-image" src="img/dark-moon.png" alt="우울하고 어두운 분위기" />
                             <div class="card-icon">🌑</div>
                             <div class="card-title">우울하고 어두운 분위기</div>
                             <div class="card-description">깊고 잔잔한 울림의 음영</div>
@@ -1052,6 +1152,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_leader" value="cute">
                         <div class="card-front mood-card mood-cute">
+                            <img class="card-image" src="img/pink-woman.png" alt="사랑스럽고 귀여운 분위기" />
                             <div class="card-icon">💕</div>
                             <div class="card-title">사랑스럽고 귀여운 분위기</div>
                             <div class="card-description">달콤하고 포근한 무드</div>
@@ -1087,7 +1188,7 @@
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_connector" value="woody_base"></div>
                     </div>
                     <div class="option" style="display:grid;grid-template-columns:1fr 80px 80px 80px;gap:10px;align-items:center;">
-                        <div>🍋🟩시트러스</div>
+                        <div>🍋시트러스</div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_connector" value="citrus_top"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_connector" value="citrus_middle"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_connector" value="citrus_base"></div>
@@ -1154,6 +1255,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_connector" value="calm">
                         <div class="card-front mood-card mood-calm">
+                            <img class="card-image" src="img/green-man.png" alt="차분하고 여유로운 분위기" />
                             <div class="card-icon">🧘‍♀️</div>
                             <div class="card-title">차분하고 여유로운 분위기</div>
                             <div class="card-description">잔잔한 파스텔 톤의 포근함</div>
@@ -1162,6 +1264,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_connector" value="cynical">
                         <div class="card-front mood-card mood-cynical">
+                            <img class="card-image" src="img/red-woman.png" alt="시니컬하고 통통 튀는 분위기" />
                             <div class="card-icon">😏</div>
                             <div class="card-title">시니컬하고 통통 튀는 분위기</div>
                             <div class="card-description">재치 있고 도발적인 무드</div>
@@ -1170,6 +1273,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_connector" value="intense">
                         <div class="card-front mood-card mood-intense">
+                            <img class="card-image" src="img/blue-bubbles.png" alt="강렬하고 정열적인 분위기" />
                             <div class="card-icon">🔥</div>
                             <div class="card-title">강렬하고 정열적인 분위기</div>
                             <div class="card-description">뜨거운 에너지와 드라마틱함</div>
@@ -1178,6 +1282,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_connector" value="hopeful">
                         <div class="card-front mood-card mood-hopeful">
+                            <img class="card-image" src="img/sunflower.png" alt="낙관적이고 희망적인 분위기" />
                             <div class="card-icon">🌅</div>
                             <div class="card-title">낙관적이고 희망적인 분위기</div>
                             <div class="card-description">부드러운 여명처럼 펼쳐지는 기대감</div>
@@ -1186,6 +1291,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_connector" value="dark">
                         <div class="card-front mood-card mood-dark">
+                            <img class="card-image" src="img/dark-moon.png" alt="우울하고 어두운 분위기" />
                             <div class="card-icon">🌑</div>
                             <div class="card-title">우울하고 어두운 분위기</div>
                             <div class="card-description">깊고 잔잔한 울림의 음영</div>
@@ -1194,6 +1300,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_connector" value="cute">
                         <div class="card-front mood-card mood-cute">
+                            <img class="card-image" src="img/pink-woman.png" alt="사랑스럽고 귀여운 분위기" />
                             <div class="card-icon">💕</div>
                             <div class="card-title">사랑스럽고 귀여운 분위기</div>
                             <div class="card-description">달콤하고 포근한 무드</div>
@@ -1229,7 +1336,7 @@
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_creator" value="woody_base"></div>
                     </div>
                     <div class="option" style="display:grid;grid-template-columns:1fr 80px 80px 80px;gap:10px;align-items:center;">
-                        <div>🍋🟩시트러스</div>
+                        <div>🍋시트러스</div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_creator" value="citrus_top"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_creator" value="citrus_middle"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_creator" value="citrus_base"></div>
@@ -1296,6 +1403,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_creator" value="calm">
                         <div class="card-front mood-card mood-calm">
+                            <img class="card-image" src="img/green-man.png" alt="차분하고 여유로운 분위기" />
                             <div class="card-icon">🧘‍♀️</div>
                             <div class="card-title">차분하고 여유로운 분위기</div>
                             <div class="card-description">잔잔한 파스텔 톤의 포근함</div>
@@ -1304,6 +1412,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_creator" value="cynical">
                         <div class="card-front mood-card mood-cynical">
+                            <img class="card-image" src="img/red-woman.png" alt="시니컬하고 통통 튀는 분위기" />
                             <div class="card-icon">😏</div>
                             <div class="card-title">시니컬하고 통통 튀는 분위기</div>
                             <div class="card-description">재치 있고 도발적인 무드</div>
@@ -1312,6 +1421,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_creator" value="intense">
                         <div class="card-front mood-card mood-intense">
+                            <img class="card-image" src="img/blue-bubbles.png" alt="강렬하고 정열적인 분위기" />
                             <div class="card-icon">🔥</div>
                             <div class="card-title">강렬하고 정열적인 분위기</div>
                             <div class="card-description">뜨거운 에너지와 드라마틱함</div>
@@ -1320,6 +1430,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_creator" value="hopeful">
                         <div class="card-front mood-card mood-hopeful">
+                            <img class="card-image" src="img/sunflower.png" alt="낙관적이고 희망적인 분위기" />
                             <div class="card-icon">🌅</div>
                             <div class="card-title">낙관적이고 희망적인 분위기</div>
                             <div class="card-description">부드러운 여명처럼 펼쳐지는 기대감</div>
@@ -1328,6 +1439,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_creator" value="dark">
                         <div class="card-front mood-card mood-dark">
+                            <img class="card-image" src="img/dark-moon.png" alt="우울하고 어두운 분위기" />
                             <div class="card-icon">🌑</div>
                             <div class="card-title">우울하고 어두운 분위기</div>
                             <div class="card-description">깊고 잔잔한 울림의 음영</div>
@@ -1336,6 +1448,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_creator" value="cute">
                         <div class="card-front mood-card mood-cute">
+                            <img class="card-image" src="img/pink-woman.png" alt="사랑스럽고 귀여운 분위기" />
                             <div class="card-icon">💕</div>
                             <div class="card-title">사랑스럽고 귀여운 분위기</div>
                             <div class="card-description">달콤하고 포근한 무드</div>
@@ -1371,7 +1484,7 @@
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_free" value="woody_base"></div>
                     </div>
                     <div class="option" style="display:grid;grid-template-columns:1fr 80px 80px 80px;gap:10px;align-items:center;">
-                        <div>🍋🟩시트러스</div>
+                        <div>🍋시트러스</div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_free" value="citrus_top"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_free" value="citrus_middle"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_free" value="citrus_base"></div>
@@ -1438,6 +1551,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_free" value="calm">
                         <div class="card-front mood-card mood-calm">
+                            <img class="card-image" src="img/green-man.png" alt="차분하고 여유로운 분위기" />
                             <div class="card-icon">🧘‍♀️</div>
                             <div class="card-title">차분하고 여유로운 분위기</div>
                             <div class="card-description">잔잔한 파스텔 톤의 포근함</div>
@@ -1446,6 +1560,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_free" value="cynical">
                         <div class="card-front mood-card mood-cynical">
+                            <img class="card-image" src="img/red-woman.png" alt="시니컬하고 통통 튀는 분위기" />
                             <div class="card-icon">😏</div>
                             <div class="card-title">시니컬하고 통통 튀는 분위기</div>
                             <div class="card-description">재치 있고 도발적인 무드</div>
@@ -1454,6 +1569,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_free" value="intense">
                         <div class="card-front mood-card mood-intense">
+                            <img class="card-image" src="img/blue-bubbles.png" alt="강렬하고 정열적인 분위기" />
                             <div class="card-icon">🔥</div>
                             <div class="card-title">강렬하고 정열적인 분위기</div>
                             <div class="card-description">뜨거운 에너지와 드라마틱함</div>
@@ -1462,6 +1578,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_free" value="hopeful">
                         <div class="card-front mood-card mood-hopeful">
+                            <img class="card-image" src="img/sunflower.png" alt="낙관적이고 희망적인 분위기" />
                             <div class="card-icon">🌅</div>
                             <div class="card-title">낙관적이고 희망적인 분위기</div>
                             <div class="card-description">부드러운 여명처럼 펼쳐지는 기대감</div>
@@ -1470,6 +1587,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_free" value="dark">
                         <div class="card-front mood-card mood-dark">
+                            <img class="card-image" src="img/dark-moon.png" alt="우울하고 어두운 분위기" />
                             <div class="card-icon">🌑</div>
                             <div class="card-title">우울하고 어두운 분위기</div>
                             <div class="card-description">깊고 잔잔한 울림의 음영</div>
@@ -1478,6 +1596,7 @@
                     <label class="card-option">
                         <input type="radio" name="mood_free" value="cute">
                         <div class="card-front mood-card mood-cute">
+                            <img class="card-image" src="img/pink-woman.png" alt="사랑스럽고 귀여운 분위기" />
                             <div class="card-icon">💕</div>
                             <div class="card-title">사랑스럽고 귀여운 분위기</div>
                             <div class="card-description">달콤하고 포근한 무드</div>
@@ -1513,7 +1632,7 @@
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_explorer" value="woody_base"></div>
                     </div>
                     <div class="option" style="display:grid;grid-template-columns:1fr 80px 80px 80px;gap:10px;align-items:center;">
-                        <div>🍋🟩시트러스</div>
+                        <div>🍋시트러스</div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_explorer" value="citrus_top"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_explorer" value="citrus_middle"></div>
                         <div style="text-align:center;"><input type="checkbox" name="family_notes_explorer" value="citrus_base"></div>
@@ -1859,10 +1978,6 @@
                 </div>
                 <div class="question">Perfume Quest 완료! 모든 선택이 모여 당신만의 향 스토리가 완성되었어요.</div>
                 <div class="small">이 답변은 당신의 ‘블렌딩 향 분석’과 ‘스토리 제작’, ‘라벨 생성’에 활용됩니다. 참여 감사합니다.</div>
-                <div class="question" style="margin-top:16px;">성함 또는 닉네임을 입력해주세요<span class="req">*</span></div>
-                <div class="options">
-                    <input type="text" placeholder="예: 김향, 향수러버 등" data-question-id="user-name-18">
-                </div>
                 <div class="footer-actions">
                     <button class="btn outline" data-prev="17">Prev</button>
                     <button class="btn primary" data-next="19">Next</button>
